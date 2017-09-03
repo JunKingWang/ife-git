@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		li {
+			display: inline-block;
+			padding: 5px;
+			margin: 5px;
+			background-color: red;
+			color: white;
+			/*改变鼠标的样式*/
+			cursor: pointer;
+			width: 10px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" name="input_num" id="inputNum">
+	<button id="leftIn">左侧入</button>
+	<button id="rightIn">右侧入</button>
+	<button id="leftOut">左侧出</button>
+	<button id="rightOut">右侧出</button>
+	<ul id="ulList"></ul>
+
+	<script type="text/javascript">
+		var inputNum = document.getElementById("inputNum");
+		var leftIn = document.getElementById("leftIn");
+		var rightIn = document.getElementById("rightIn");
+		var leftOut = document.getElementById("leftOut");
+		var rightOut = document.getElementById("rightOut");
+		var ulList = document.getElementById("ulList");
+
+		//初始化赋值事件
+		function init() {
+			leftIn.onclick = function() {
+				insertNum("left");
+			};
+			rightIn.onclick = function() {
+				insertNum("right");
+			};
+			leftOut.onclick = function() {
+				delNum("left");
+			};
+			rightOut.onclick = function() {
+				delNum("right");
+			};
+		}
+
+		//插入数字
+		function insertNum(direction) {
+			debugger;
+			if(!inputNum.value || isNaN(inputNum.value) || !(inputNum.value <= 100 && inputNum.value >= 10)) {
+				alert("请输入一个10至100之间的数字")
+				return;
+			} 
+
+			if(ulList.childNodes.length >= 60) {
+				alert("数据最大量为60个，已达到最大值");
+				return;
+			}
+
+			var liItem = document.createElement("li");
+			// liItem.innerHTML = inputNum.value;
+			var liHeight = inputNum.value + "px";
+			liItem.style.height = liHeight;
+			if(direction == "left") {
+				ulList.insertBefore(liItem,ulList.firstChild);
+			} else {
+				ulList.appendChild(liItem);
+			}
+			liItem.onclick = function(event) {
+				debugger;
+				delNum("",event.target);
+			};
+		}
+
+		//移除数字
+		function delNum(direction,target) {
+			debugger;
+			if(ulList.childNodes.length == 0) {
+				alert("没有可删除的数据");
+			} else if(direction == "left") {
+				alert(ulList.firstChild.style.height.split("px")[0] * 1);
+				ulList.removeChild(ulList.firstChild);
+			} else if(direction == "right") {
+				alert(ulList.lastChild.style.height.split("px")[0] * 1);
+				ulList.removeChild(ulList.lastChild);
+			} else {
+				alert(target.style.height.split("px")[0] * 1);
+				ulList.removeChild(target);
+			}
+		}
+
+		init();
+
+	</script>
+</body>
+</html>
