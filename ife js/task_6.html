@@ -1,0 +1,123 @@
+<!-- 基于任务四进行升级
+将新元素输入框从input改为textarea
+允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔
+增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		li {
+			display: inline-block;
+			padding: 5px;
+			margin: 5px;
+			background-color: red;
+			color: white;
+			/*改变鼠标的样式*/
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<!-- <input type="text" name="input_num" id="inputNum"> -->
+	<textarea id="textStr" placeholder="请输入字符串，以特殊符号或者空格键间隔" rows="10" cols="40"></textarea>
+	<button id="left_in">左侧入</button>
+	<button id="right_in">右侧入</button>
+	<button id="leftOut">左侧出</button>
+	<button id="rightOut">右侧出</button>
+	<ul id="ulList"></ul>
+	<input type="text" id="inputStr">
+	<button id="highSame">查询</button>
+	<script type="text/javascript">
+		var textStr = document.getElementById("textStr");
+		var left_in = document.getElementById("left_in");
+		var right_in = document.getElementById("right_in");
+		var leftOut = document.getElementById("leftOut");
+		var rightOut = document.getElementById("rightOut");
+		var ulList = document.getElementById("ulList");
+		var inputStr = document.getElementById("inputStr");
+		var highSame = document.getElementById("highSame");
+
+		//初始化赋值事件
+		function init() {
+			left_in.onclick = function() {
+				insertStrs("left");
+			};
+			right_in.onclick = function() {
+				insertStrs("right");
+			};
+			leftOut.onclick = function() {
+				delNum("left");
+			};
+			rightOut.onclick = function() {
+				delNum("right");
+			};
+			highSame.onclick = function() {
+				debugger;
+				highLightSame(inputStr.value);
+			}
+		}
+
+		//插入数字
+		function insertStrs(direction) {
+			debugger;
+			if(!textStr.value) {
+				alert("请输入字符串，以特殊符号或者空格键间隔");
+				return;
+			}
+			var str = /[^\u4e00-\u9fa5a-zA-Z0-9]/ig;
+			var arr = textStr.value.split(str);
+			var arrShow = arr.filter(function(val) {
+				return (val && !str.test(val));
+			});
+			arrShow.forEach(function(val) {
+				debugger;
+				var liItem = document.createElement("li");
+				liItem.innerHTML = val;
+				if(direction == "right") {
+					ulList.appendChild(liItem);
+				} else {
+					ulList.insertBefore(liItem, ulList.firstChild);
+				}
+				liItem.onclick = function(event) {
+					delNum("",event.target);
+				};
+			});
+		}
+
+		//移除数字
+		function delNum(direction,target) {
+			debugger;
+			if(ulList.childNodes.length == 0) {
+				alert("没有可删除的数据");
+			} else if(direction == "left") {
+				alert(ulList.firstChild.innerHTML);
+				ulList.removeChild(ulList.firstChild);
+			} else if(direction == "right") {
+				alert(ulList.lastChild.innerHTML);
+				ulList.removeChild(ulList.lastChild);
+			} else {
+				alert(target.innerHTML);
+				ulList.removeChild(target);
+			}
+		}
+
+		function highLightSame(inputStr) {
+			debugger;
+			if(!inputStr) {
+				alert("请输入要查询的字符串");
+				return;
+			}
+			var arr = document.getElementsByTagName("li");
+			for(var i = 0; i < arr.length; i++) {
+				if(arr[i].innerHTML.indexOf(inputStr) >= 0) {
+					arr[i].style.backgroundColor = "blue";
+				}
+			}
+		}
+
+		init();
+
+	</script>
+</body>
+</html>
