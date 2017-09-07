@@ -12,9 +12,11 @@ form {
 
 input[type="text"] {
 	width: 450px;
-	height: 50px;
+	height: 60px;
 	border-radius: 5px;
 	border: solid 1px #DBDBDB;
+	font-size: 22px;
+	padding-left: 20px;
 }
 
 input[type="button"] {
@@ -30,5 +32,6 @@ input[type="button"] {
 label {
 	position: relative;
 	margin-left: 120px;
+	color: #DBDBDB;
 }
 
