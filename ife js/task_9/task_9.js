@@ -3,6 +3,10 @@ var arr = [];
 window.onload = function() {
 	debugger;
 	var rootNode = document.getElementById("main");
+	var nodes = document.getElementsByClassName("main_1");
+	var arrNodes = Array.prototype.slice.call(nodes);
+	var inputStr = document.getElementsByName("search")[0];
+
 	document.getElementById("ergodic").onclick = function() {
 		arr = [];
 		ergodicTree(rootNode);
@@ -11,10 +15,22 @@ window.onload = function() {
 
 	document.getElementById("search").onclick = function() {
 		reset(arr);
-		arr = [];
 		ergodicTree(rootNode);
-		searchNode(arr);
+		searchNode(arr, inputStr.value);
 	};
+
+	rootNode.onclick = function(event) {
+		reset(arr);
+		chooseNode(event.target);
+	};
+
+	document.getElementById("delete").onclick = function() {
+		deleteNodes(arrNodes);
+	};
+
+	document.getElementById("insert").onclick = function() {
+		insertNodes(arrNodes, inputStr.value);
+	}
 }
 
 function ergodicTree(node) {
@@ -45,9 +61,8 @@ function showNode(arr) {
 	},1000);
 }
 
-function searchNode(arr) {
+function searchNode(arr, inputStr) {
 	var i = 0;
-	var inputStr = document.getElementsByName("search")[0].value;
 	arr[i].style.backgroundColor = "red";
 	var showNodeInterval = setInterval(function() {
 		debugger;
@@ -74,5 +89,34 @@ function reset(arr) {
 	}
 	arr.forEach(function(val) {
 		val.style.backgroundColor = "#fff";
+	});
+	arr = [];
+}
+
+function chooseNode(target) {
+	// console.log(target);
+	target.style.backgroundColor = "red";
+
+}
+
+function deleteNodes(arr) {
+	debugger;
+	arr.forEach(function(val) {
+		if(val.style.backgroundColor == "red") {
+			val.remove(this);
+		}
+	});
+}
+
+function insertNodes(arr, inputStr) {
+	debugger;
+	var node = document.createElement("div");
+	var nodeText = document.createTextNode(inputStr);
+	node.appendChild(nodeText);
+	node.setAttribute("class", "main_1");
+	arr.forEach(function(val) {
+		if(val.style.backgroundColor == "red") {
+			val.appendChild(node);
+		}
 	});
 }

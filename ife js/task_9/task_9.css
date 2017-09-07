@@ -1,0 +1,28 @@
+/*弹性布局flexible*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#main {
+	height: 180px;
+	width: 100%;
+}
+
+.main_1 {
+	display: flex;
+	border: solid 1px black;
+	padding: 5px;
+	margin: 5px;
+	justify-content: space-between;
+	flex: 1;
+	background-color: #FFF;
+}
+
+.percent_5 {
+	flex: 0 0 5%;
+}
+
+.pervent_10 {
+	flex: 0 0 10%;
+}
