@@ -1,0 +1,57 @@
+/*弹性布局flexible*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#main {
+	display: flex;
+	border: solid 1px black;
+	height: 180px;
+	width: 100%;
+	padding: 10px;
+	margin: 5px;
+	justify-content: space-between;
+	background-color: #FFF;
+}
+
+.main_1 {
+	display: flex;
+	border: solid 1px black;
+	padding: 10px;
+	margin: 5px;
+	justify-content: space-between;
+	flex: 1;
+	background-color: #FFF;
+}
+
+.main_2 {
+	display: flex;
+	border: solid 1px black;
+	padding: 10px;
+	margin: 5px;
+	flex: 1;
+	justify-content: space-between;
+	background-color: #FFF;
+}
+
+.main_3 {
+	display: flex;
+	border: solid 1px black;
+	margin: 5px;
+	background-color: #FFF;
+}
+
+.main_4 {
+	border: solid 1px black;
+	margin: 10px;
+	background-color: #FFF;
+}
+
+.percent_5 {
+	flex: 0 0 5%;
+}
+
+.pervent_10 {
+	flex: 0 0 10%;
+}
