@@ -9,6 +9,7 @@ function promptFocus(id) {
 	}
 }
 
+//检验名称
 function checkName() {
 	debugger;
 	var name = $("name").value;
@@ -27,6 +28,7 @@ function checkName() {
 	return true;
 }
 
+//检验密码
 function checkPsd() {
 	var psd = $("psd").value;
 	if(!psd) {
@@ -48,6 +50,7 @@ function checkPsd() {
 	}
 }
 
+//重复密码校验
 function checkRepsd() {
 	var repsd = $("repsd").value;
 	if(!repsd) {
@@ -64,6 +67,7 @@ function checkRepsd() {
 	return true;
 }
 
+//邮箱校验
 function checkEmail() {
 	var email = $("email").value;
 	if(!email) {
@@ -80,6 +84,7 @@ function checkEmail() {
 	}
 }
 
+//电话号码校验
 function checkPhone() {
 	var phone = $("phone").value;
 	if(!phone) {
@@ -96,6 +101,7 @@ function checkPhone() {
 	}
 }
 
+//校验后不同情况的显示
 function changeLabel(id, textType, color) {
 	$(id).style.borderColor = color;
 	$(id + "Label").style.color = color;
@@ -140,6 +146,7 @@ function showText(id, textType) {
 	return showJson[id][textType];
 }
 
+//点击校验按钮的校验
 function checkOut() {
 	if(checkName() && checkPsd() && checkRepsd() && checkEmail() && checkPhone()) {
 		alert("提交成功");
@@ -148,6 +155,7 @@ function checkOut() {
 	}
 }
 
+//绑定事件
 window.onload = function() {
 	promptFocus("name");
 	promptFocus("psd");
