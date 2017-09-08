@@ -1,0 +1,58 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+form {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	font-size: 20px;
+}
+
+div {
+	margin: 40px;
+	font-weight: bold;
+}
+
+#isSchool {
+	margin-right: 10px;
+	margin-left: 120px;
+}
+
+#noSchool {
+	margin-right: 10px;
+	margin-left: 220px;
+}
+
+select {
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 20px;
+	height: 50px;
+} 
+
+select:nth-child(2) {
+	width: 240px;
+	margin: 10px;
+}
+
+select:nth-child(3) {
+	width: 300px;
+	margin-left:40px;
+}
+
+input[type=text] {
+	height: 50px;
+	width: 480px;
+	margin-left: 10px;
+	border-radius: 5px;
+	border: solid 1px #999;
+}
+
+span {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
+

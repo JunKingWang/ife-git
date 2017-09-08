@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="task_12.css">
+</head>
+<body>
+	<form>
+		<div>
+			<input type="radio" name="isSchool" id="isSchool" value="isSchool" onclick="changeSchool()">在校生
+			<input type="radio" name="isSchool" id="noSchool" value="noSchool"onclick="changeCompany()">非在校生
+		</div>
+		<div hidden id="school">
+			<span>学校</span>
+			<select id="city" onchange="changeUniversity()">
+				<option>北京</option>
+				<option>上海</option>
+			</select>
+			<select id="university">
+			</select>
+		</div>
+		<div hidden id="company">
+			<span>就业单位</span>
+			<input type="text" name="working" id="working">
+		</div>
+		<script type="text/javascript" src="task_12.js"></script>
+	</form>
+</body>
+</html>
