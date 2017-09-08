@@ -1,0 +1,48 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+form {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+}
+
+div {
+	margin: 20px;
+}
+
+.iuputStr {
+	height: 40px;
+	width: 480px;
+	border-radius: 5px;
+	border: solid 1px #DBDBDB;
+	padding-left: 5px;
+	font-size: 16px;
+}
+
+span:first-child {
+	display:-moz-inline-box;
+	display:inline-block;
+	width: 120px;
+	text-align: right;
+	margin-right: 15px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+input[type=button] {
+	height: 40px;
+	width: 60px;
+	float: right;
+	margin-right: 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #6495ED;
+	color: #fff;
+}
+
+label {
+	margin-left: 140px;
+}
