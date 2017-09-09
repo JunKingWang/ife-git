@@ -1,0 +1,56 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	text-align: center;
+}
+
+td {
+	width: 50px;
+	height: 50px;
+}
+
+#thead {
+	position: absolute;
+	margin-left: 20% ;
+}
+
+#tleft {
+	position: absolute;
+	margin-left: calc(20% - 50px);
+	margin-top: 50px;
+}
+
+#tbody {
+	border: solid 3px black;
+	position: absolute;
+	margin-left: 20%;
+	margin-top: 50px;
+	border-collapse: collapse;
+}
+
+#tbody td {
+	border: solid 1px #676767;
+	height: 50px;
+	width: 50px;
+	padding: 0;
+}
+
+#order {
+	position: absolute;
+	margin-top: 600px;
+	margin-left: 20%;
+}
+
+.choose {
+	background-color: red;
+}
+
+#blueNode {
+	width: 50px;
+	height: 10px;
+	background-color: blue;
+	margin-top: -25px;
+}
