@@ -33,36 +33,27 @@ function orderGo() {
 		if(idarr[0] == "1") {
 			return;
 		}
-		parentNode.style.backgroundColor = "#fff";
 		var id = (idarr[0] * 1 - 1) + "d" + idarr[1];
-		$(id).appendChild($("blueNode"));
-		$(id).style.backgroundColor  = "red";
 	} else if(direction == "left") {
 		if(idarr[1] == "1") {
 			return;
 		}
-		parentNode.style.backgroundColor = "#fff";
 		var id = idarr[0] + "d" + (idarr[1] * 1 - 1);
-		$(id).appendChild($("blueNode"));
-		$(id).style.backgroundColor  = "red";
 	} else if(direction == "right") {
 		debugger;
 		if(idarr[1] == "10") {
 			return;
 		}
-		parentNode.style.backgroundColor = "#fff";
 		var id = idarr[0] + "d" + (idarr[1] * 1 + 1)
-		$(id).appendChild($("blueNode"));
-		$(id).style.backgroundColor  = "red";
 	} else {
 		if(idarr[0] == "10") {
 			return;
 		}
-		parentNode.style.backgroundColor = "#fff";
 		var id = (idarr[0] * 1 + 1) + "d" + idarr[1];
-		$(id).appendChild($("blueNode"));
-		$(id).style.backgroundColor  = "red";
 	}
+	parentNode.style.backgroundColor = "#fff";
+	$(id).appendChild($("blueNode"));
+	$(id).style.backgroundColor  = "red";
 }
 
 function turnLeft() {
