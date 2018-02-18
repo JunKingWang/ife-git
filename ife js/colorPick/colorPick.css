@@ -1,0 +1,95 @@
+* {
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+}
+
+.main {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.main:after {
+	clear: both;
+	display: block;
+	content: ""
+}
+
+#colorPicChoose {
+	position: relative;
+	float: left;
+	margin-right: 20px;
+	overflow: hidden;
+}
+
+#colorPicBar {
+	position: relative;
+	float: left;
+	margin-right: 20px;
+}
+
+.border-default {
+	border: 1px solid #ccc;
+}
+
+.chooseBtn {
+	width: 8px;
+	height: 8px;
+	border-radius: 8px;
+	border: 2px solid #fff;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.barBtn {
+	width: 19px;
+	height: 19px;
+	top: 0px;
+	border: 1px solid #ccc;
+	background: #ffe;
+	border-radius: 19px;
+	position: absolute;
+	transform: translateY(-50%);
+	left: -2px;
+	cursor: pointer;
+}
+
+.displayBoard {
+	position: relative;
+	float: left;
+}
+
+.inputGroup {
+	margin-bottom: 10px;
+}
+
+.inputGroup label {
+	width: 50px;
+	display: inline-block;
+}
+
+.inputCell {
+	font-size: 24px;
+	line-height: 38px;
+	width: 145px;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+}
+
+.hrLine {
+	margin-bottom: 10px;
+	border: none;
+	border-top: 1px solid #ccc;
+	height: 0;
+}
+
+
+

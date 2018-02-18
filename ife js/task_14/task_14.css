@@ -21,6 +21,7 @@ td {
 #tbody {
 	margin: 0 auto;
 	border-collapse: collapse;
+	border: solid 3px black;
 }
 
 #tbody td {

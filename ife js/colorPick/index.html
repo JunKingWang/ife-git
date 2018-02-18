@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="colorPick.css">
+</head>
+<body>
+	<div class="main">
+		<div id="colorPicChoose">
+			<canvas id="chooseContain" width="300px" height="300px" class="border-default"></canvas>
+			<div id="chooseBtn" class="chooseBtn"></div>
+		</div>
+		<div id="colorPicBar">
+			<canvas id="barContain" width="15px" height="300px" class="border-default"></canvas>
+			<div id="barBtn" class="barBtn"></div>
+		</div>
+		<div id="displayBoard" class="displayBoard">
+			<!-- <canvas id="colorBoard" width="40px" height="40px"></canvas> -->
+			<div id="rgbBoard">
+				<div class="inputGroup">
+					<label>R</label>
+					<input type="number" name="" class="inputCell" id="rInput"  onchange="htmlPreview.change()">
+				</div>
+				<div class="inputGroup">
+					<label>G</label>
+					<input type="number" name="" class="inputCell" id="gInput" onchange="htmlPreview.change()">
+				</div>
+				<div class="inputGroup">
+					<label>B</label>
+					<input type="number" name="" class="inputCell" id="bInput" onchange="htmlPreview.change()">
+				</div>
+			</div>
+			<hr class="hrLine">
+			<div id="hslBoard">
+				<div class="inputGroup">
+					<label>H</label>
+					<input type="number" name="" class="inputCell" id="hInput">
+				</div>
+				<div class="inputGroup">
+					<label>S</label>
+					<input type="number" name="" class="inputCell" id="lInput">
+				</div>
+				<div class="inputGroup">
+					<label>L</label>
+					<input type="number" name="" class="inputCell" id="sInput">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="colorPick.js"></script>
+</body>
+</html>
