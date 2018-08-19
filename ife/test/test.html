@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn" onclick="clickAction(event)">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+
+function clickAction(event) {
+	debugger;
+	var decNumber = document.getElementById("dec-number").value;
+	var binBit = document.getElementById("bin-bit").value;
+	dec2bin(decNumber, binBit);
+}
+
+function dec2bin(decNumber, binBit) {
+	debugger;
+    // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+    var result = "";
+    if(decNumber < 0 || decNumber.split(".").length > 1) {
+    	alert("输入一个十进制非负整数");
+    } else {
+    	change(decNumber, result, binBit);
+    }
+}
+
+function change(value, result, binBit) {
+	if(value == 1) {
+		result = "1" + result;
+		if(binBit != "" && binBit < result.length) {
+			console.log("error!");
+		} else if(binBit != "" && binBit > result.length) {
+			var add = binBit - result.length;
+			for(var i = 0; i < add; i++) {
+				result = "0" + result;
+			}
+		}
+		document.getElementById("result").innerText = "运算结果:" + result;
+		return;
+	} else if (value == 0) {
+		result = "0";
+		if(binBit != "" && binBit > 0) {
+			for(var i = 1; i < binBit; i++) {
+				result = "0" + result;
+			}
+		}
+		document.getElementById("result").innerText = "运算结果:" + result;
+		return;
+	}
+	result = value % 2 + result;
+	return change(parseInt(value/2), result, binBit);
+}
+
+// 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+// Some coding
+
+    </script>
+</body>
+</html>

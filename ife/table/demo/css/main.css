@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#select-container {
+	padding: 50px 100px;
+}
+
+table {
+	margin: 0 auto;
+}
+
+table th {
+	width: 80px;
+}
+
+table td {
+	width: 80px;
+    text-align: center;
+}
+
+.select-group {
+	display: inline-block;
+	margin-right: 15px;
+}

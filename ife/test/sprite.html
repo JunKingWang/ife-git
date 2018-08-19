@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.one {
+			background: url('./erik_ce204002.jpg');
+			width: 481px;
+			height: 481px;
+			background-repeat: no-repeat;
+			background-position-y: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="one" id="pic"></div>
+	<script type="text/javascript">
+		var y = 1;
+		var direction = "down"
+		window.onload = function() {
+			setInterval(function() {
+				if(y > 16) {
+					direction = "up";
+					y--;		
+				} else if(y < 0) {
+					direction = "down"
+					y++;
+				}
+				document.getElementById("pic").style.backgroundPositionY = y * -481 + 'px';
+				if(direction == "down") {
+					y++;
+				} else {
+					y--
+				}
+			},100);
+		}
+	</script>
+</body>
+</html>

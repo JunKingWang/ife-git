@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	.clearfix:after {
+		content: ".";
+		display: block;
+		visibility: hidden;
+		height: 0;
+		line-height: 0;
+		clear: both;
+	}
+
+	body {
+		margin: 0;
+	}
+
+	.clearfix {
+		zoom: 1;
+	}
+
+	#first-left {
+		width: 30%;
+		background: red;
+		height: 500px;
+		float: left;
+	}
+
+	#first-right {
+		width: 70%;
+		background: green;
+		height: 500px;
+		float: right;
+	}
+
+	.display-none {
+		display: none;
+	}
+
+	#second-left {
+		width: 120px;
+		height: 500px;
+		background: red;
+		float: left;
+		margin-left: -100%;
+	}
+
+	#second-right {
+		width: 100%;
+		height: 500px;
+		background: green;
+		float: left;
+	}
+
+	#third {
+		align-items: flex-start;
+	}
+
+	#third-left {
+		background: green;
+		flex: 0 0 auto;
+		width: 120px;
+	}
+
+	#third-right {
+		background: red;
+		flex: 1 1 auto;
+	}
+
+	#forth {
+		padding: 0 300px 0 200px;
+	}
+
+	#forth-middle {
+		min-height: 100px;
+		background: yellow;
+		float: left;
+		width: 100%;
+		position: relative;
+	}
+
+	#forth-left {
+		min-height: 100px;
+		width: 200px;
+		background: green;
+		float: left;
+		margin-left: -100%;
+		left: -200px;
+		position: relative;
+	}
+
+	#forth-right {
+		min-height: 100px;
+		width: 300px;
+		background: red;
+		float: left;
+		right: -300px;
+		margin-left: -300px;
+		position: relative;
+	}
+
+	#fifth {
+		font-size: 0;
+	}
+
+	#fifth-left{
+		background: green;
+		width: 200px;
+		display: inline-block;
+    	font-size: 16px;
+	}
+
+	#fifth-middle {
+		background: yellow;
+		width: 300px;
+		display: inline-block;
+    	font-size: 16px;
+	}
+
+	#fifth-right {
+		background: red;
+		width: calc(100% - 500px);
+		display: inline-block;
+    	font-size: 16px;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<select id="select" onchange="selectChange(event)">
+			<option value="first">1</option>
+			<option value="second">2</option>
+			<option value="third">3</option>
+			<option value="forth">4</option>
+			<option value="fifth">5</option>
+		</select>
+	</header>
+	<section id="first" class="clearfix">
+		<div id="first-left"></div>
+		<div id="first-right"></div>
+	</section> 
+	<section id="second" class="clearfix display-none">
+		<div id="second-right"></div>
+		<div id="second-left"></div>
+	</section>
+	<section id="third" class="display-none">
+		<div id="third-left">
+			11111 11111111111 11111 11 11111 11111 111111 1111111111111 111111 111111 11111 111111111111 111111111 1111111111 111 1111111 111111111 111111 11111111 1111111111111 1111 111111 1111111 111111 11111 1111111
+		</div>
+		<div id="third-right">
+			11111 1111 1111111 11111 11 11111 11111 111111 1111111111111 111111 111111 11111 111 11111 1111 11111 1111 1111 111111 111 1111111111111111 111111 11111111 11111 11111111 1111 111111 1111111 111111 11111 1111111
+		</div>
+	</section>
+	<section id="forth" class="display-none">
+		<div id="forth-middle">middle</div>
+		<div id="forth-left">left</div>
+		<div id="forth-right">right</div>
+	</section>
+	<section id="fifth" class="display-none">
+		<div id="fifth-left">left</div>
+		<div id="fifth-middle">middle</div>
+		<div id="fifth-right">right</div>
+	</section>
+	<script type="text/javascript">
+		var value = "first";
+		function selectChange(e) {
+			document.getElementById(value).style.display = "none";
+			if(e.target.value == "third") {
+				document.getElementById(e.target.value).style.display="flex";
+			} else {
+				document.getElementById(e.target.value).style.display="block";
+			}
+			value = e.target.value;
+		}
+	</script>
+</body>
+</html>

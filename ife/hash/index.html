@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button id="a" onclick="changeHash(event)">A</button>
+	<button id="b" onclick="changeHash(event)">B</button>
+	<button id="c" onclick="changeHash(event)">C</button>
+	<div id="cont"></div>
+	<script type="text/javascript">
+	function getHash() {
+		return document.getElementById(window.location.hash.split("#")[1]).innerText;
+	}
+
+	function changeText() {
+	    document.getElementById("cont").innerText = getHash();
+	}
+
+	function changeHash(event) {
+		window.location.hash =  "#" + event.target.getAttribute("id");
+	}
+
+	window.addEventListener("hashchange", changeText, false);
+	changeText();
+	</script>
+</body>
+</html>

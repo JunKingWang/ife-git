@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+#select-container {
+	padding: 50px 100px;
+}
+
+table {
+	margin: 0 auto;
+	width: 100%;
+}
+
+table th {
+	width: 7%;
+}
+
+table td {
+	width: 7%;
+    text-align: left;
+    height: 25px;
+    cursor: pointer;
+}
+
+table td div {
+	height: 100%;
+	display: inline-block;
+	background: url("../img/pencel.jpg") no-repeat;
+	background-size: contain;
+    width: 25px;
+    float: right;
+    display: none;
+}
+
+table td input {
+    display: none;
+    width: 100%;
+}
+
+.select-group {
+	display: inline-block;
+	margin-right: 15px;
+}
